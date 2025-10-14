@@ -1,0 +1,279 @@
+#overlays-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.overlay-holder {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(36, 9, 9);
+}
+
+.scene0-overlay,
+.scene1-overlay,
+.scene2-overlay,
+.scene3-overlay,
+.scene4-overlay,
+.scene5-overlay,
+.scene6-overlay,
+.scene7-overlay {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.scene {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.content {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  grid-template-areas: "road button";
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  bottom: 0;
+  left: 0;
+  gap: 2vw;
+  background: linear-gradient(to top, #000000 30%, #27271f);
+  z-index: 3;
+}
+
+/* SCENE0 */
+
+.scene0-overlay .scene {
+  background: rgb(13, 7, 7);
+}
+
+.scene0-overlay .h1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  font-size: clamp(3rem, 7vw, 6rem);
+  letter-spacing: 0.01em;
+}
+
+.scene0-overlay .content {
+  background: black;
+}
+
+#scene1-overlay:target {
+  display: block;
+  opacity: 1;
+}
+
+/*:target #scene1-overlay,
+#scene0-overlay {
+  display: none;
+}*/
+
+/* SCENE1 */
+
+.scene1-overlay {
+  display: none;
+}
+
+.scene1-overlay .scene {
+  background-color: rgb(48, 47, 47);
+}
+
+.moving-bg-container {
+  position: absolute;
+  inset: 0;
+  height: 90%;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.moving-bg {
+  width: 100%;
+  height: 100%;
+  background: url("img/houses1692.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  animation: bg-slide 60s linear infinite;
+  /*animation-play-state: paused;*/
+}
+
+@keyframes bg-slide {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -1692px 0;
+  }
+}
+
+.road {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 90px;
+  bottom: 0;
+  grid-area: road;
+}
+
+.eye-holder {
+  display: flex;
+  align-items: center;
+  width: 70vw;
+  height: 90px;
+}
+
+.eye {
+  display: flex;
+  position: relative;
+  width: var(--circle-width);
+  height: var(--circle-width);
+  z-index: 1;
+  animation: slide-right var(--duration) ease-in forwards;
+}
+
+/*.eye::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 9px rgb(249, 249, 249),
+    inset 0 0 0 1px white;
+  z-index: 999;
+  animation: opacity 2s forwards,
+    eyechange 2s 4s linear forwards,
+    jump 2s 8.25s linear infinite;
+}*/
+
+.eye::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 8px white, inset 0 0 0 1px white;
+  z-index: 1;
+  animation: opacity 2s 1s forwards, eyechange1 2s 4s linear forwards,
+    jump 2s 8.75s linear infinite;
+}
+
+@keyframes slide-right {
+  to {
+    transform: translate(
+      calc(
+        92vw - var(--circle-width) - var(--button-size) - var(--button-margin)
+      )
+    );
+  }
+}
+
+#scene2-overlay:target {
+  display: block;
+  opacity: 1;
+}
+
+/* SCENE2 */
+
+.scene2-overlay {
+  display: none;
+}
+
+.scene2-overlay .scene {
+  background: rgb(19, 21, 20);
+}
+
+#scene3-overlay:target {
+  display: block;
+  opacity: 1;
+}
+
+/* SCENE3 */
+
+.scene3-overlay {
+  display: none;
+}
+
+.scene3-overlay .scene {
+  background: rgb(230, 220, 75);
+}
+
+#scene4-overlay:target {
+  display: block;
+  opacity: 1;
+}
+
+/* SCENE4 */
+
+.scene4-overlay {
+  display: none;
+}
+
+.scene4-overlay .scene {
+  background: rgb(230, 114, 75);
+}
+
+#scene5-overlay:target {
+  display: block;
+  opacity: 1;
+}
+
+/* SCENE5 */
+
+.scene5-overlay {
+  display: none;
+}
+
+.scene5-overlay .scene {
+  background: rgb(132, 75, 230);
+}
+
+#scene6-overlay:target {
+  display: block;
+  opacity: 1;
+}
+
+/* SCENE6 */
+
+.scene6-overlay {
+  display: none;
+}
+
+.scene6-overlay .scene {
+  background: rgb(28, 109, 110);
+}
+
+#scene7-overlay:target {
+  display: block;
+  opacity: 1;
+}
+
+/* SCENE7 */
+
+.scene7-overlay {
+  display: none;
+}
+
+.scene7-overlay .scene {
+  background: rgb(10, 69, 30);
+}
+
+#scene0-overlay:target {
+  display: block;
+  opacity: 1;
+}

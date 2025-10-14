@@ -1,0 +1,57 @@
+/* xs */
+
+/* @media (min-width: 475px) {} */
+
+/* sm */
+
+/* @media (min-width: 640px) {} */
+
+/* md */
+
+/* @media (min-width: 768px) {} */
+
+/* lg */
+
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+
+/* @media (min-width: 1536px) {} */
+
+.button,
+.button1,
+.button2,
+.button3,
+.button4,
+.button5,
+.button6,
+.button7 {
+  display: block;
+  position: relative;
+  width: clamp(55px, 8vw, 75px);
+  height: clamp(55px, 8vw, 75px);
+  border: 10px solid #f59930;
+  border-radius: 50%;
+  background: #f7a94b;
+  cursor: pointer;
+  z-index: 999;
+  grid-area: button;
+  justify-self: end;
+  margin-right: 2vw;
+}
+
+a {
+  position: absolute;
+  width: clamp(55px, 8vw, 75px);
+  height: clamp(55px, 8vw, 75px);
+  border-radius: 50%;
+  align-self: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}

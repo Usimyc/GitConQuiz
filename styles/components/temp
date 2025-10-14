@@ -1,0 +1,40 @@
+/* Show overlay only in portrait 
+@media only screen and (orientation: portrait) {
+    .landscape-warning {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        z-index: 9999;
+        text-align: center;
+    }
+}*/
+
+/* Hide overlay in landscape 
+@media only screen and (orientation: landscape) {
+    .landscape-warning {
+        display: none;
+    }
+}*/
+
+/*
+<div class="landscape-warning">Please rotate your device to landscape </div>
+*/
+
+/*@media only screen and (max-width: 768px) and (orientation: portrait) {
+    body {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: auto;
+    }
+}
+⚠️ This is tricky: it rotates the entire viewport,
+so scroll direction changes. Usually only used in full-screen apps/games.
+
+*/
