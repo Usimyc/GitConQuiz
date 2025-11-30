@@ -12,88 +12,211 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/style.css" />
-    <title>the-escape</title>
+    <title>gitkonjam</title>
   </head>
 
   <body>
-    <!--stop watching what I am doing! The important thing is to get the message through. Never mind the way as all ways lead to....-->
     <div id="overlays-container" class="overlays-container">
       <div id="overlay-holder" class="overlay-holder">
+        <div class="figure-holder">
+            <div class="head"></div>
+            <div class="eyes">
+              <div class="eye-left"></div>
+              <div class="eye-right"></div>
+            </div>
+            <div class="legs">
+              <div class="leg1-container">
+                <div class="leg1">
+                  <div class="leg1">
+                    <div class="leg1">
+                      <div class="leg1">
+                        <div class="leg1">
+                          <div class="leg1">
+                            <div class="leg1">
+                              <div class="leg1">
+                                <div class="leg1">
+                                  <div class="leg1">
+                                    <div class="leg1">
+                                      <div class="leg1">
+                                        <div class="leg1"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="leg2-container">
+                <div class="leg2">
+                  <div class="leg2">
+                    <div class="leg2">
+                      <div class="leg2">
+                        <div class="leg2">
+                          <div class="leg2">
+                            <div class="leg2">
+                              <div class="leg2">
+                                <div class="leg2">
+                                  <div class="leg2">
+                                    <div class="leg2">
+                                      <div class="leg2">
+                                        <div class="leg2">
+                                          <div class="leg2"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="leg3-container">
+                <div class="leg3">
+                  <div class="leg3">
+                    <div class="leg3">
+                      <div class="leg3">
+                        <div class="leg3">
+                          <div class="leg3">
+                            <div class="leg3">
+                              <div class="leg3">
+                                <div class="leg3">
+                                  <div class="leg3">
+                                    <div class="leg3">
+                                      <div class="leg3">
+                                        <div class="leg3">
+                                          <div class="leg3"></div>  
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="leg4-container">
+                <div class="leg4">
+                  <div class="leg4">
+                    <div class="leg4">
+                      <div class="leg4">
+                        <div class="leg4">
+                          <div class="leg4">
+                            <div class="leg4">
+                              <div class="leg4">
+                                <div class="leg4">
+                                  <div class="leg4">
+                                    <div class="leg4">
+                                      <div class="leg4">
+                                        <div class="leg4"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="audio-controls">
+          <label for="volume-slider" aria-hidden="true">🔉</label>
+          <input
+            id="volume-slider"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+            aria-label="Music Volume"
+          />
+          
+        </div>
+
         <div id="scene0-overlay" class="scene0-overlay">
-          <div class="scene">
-            <h1 class="h1">The Escape</h1>
+           <div class="scene">
+            <div class="h1_container">
+              <h1 class="h1">Git Con</h1>
+              <p class="introduction">A short Git quiz</p>
+            </div>
           </div>
           <div class="content">
-            <div class="road"></div>
             <div class="button"><a href="#scene1-overlay"></a></div>
           </div>
         </div>
 
-        <div id="scene1-overlay" class="scene1-overlay">
+        <div id="scene1-overlay" class="scene1-overlay hidden">
           <div class="scene">
-            <div class="moving-bg-container">
-              <div class="moving-bg"></div>
+            <div class="h1_container">
+              <h1 class="h1">The Rules</h1>
+              <p class="introduction">Choose one of two possibilities <span class="gap"></span> - A or B - <span class="gap"></span> 
+                by hitting the respective letters. 
+              <span class="gap"></span> 7 seconds are all you got before the next set.
+             <span class="gap"></span> Ready? Click the right arrow below</p>
             </div>
           </div>
           <div class="content">
-            <div class="road">
-              <div class="eye-holder">
-                <div class="eye"></div>
+            <div class="button"><a href="#scene2-overlay"></a></div>
+            <div class="buttonb"><a href="#scene0-overlay"></a></div>
+          </div>
+        </div>
+
+        <div id="scene2-overlay" class="scene2-overlay hidden">
+          <div class="scene">
+            <div class="game-info">
+              Time: <span id="time-remaining"> 10</span>
+            </div>
+            <div class="h1_container">
+              <div class="game-holder">
+                <div class="a">A</div>
+                <div class="box-a"></div>
+                <div class="b">B</div>
+                <div class="box-b"></div>
               </div>
             </div>
-            <div class="button"><a href="#scene2-overlay"></a></div>
           </div>
-        </div>
-
-        <div id="scene2-overlay" class="scene2-overlay">
-          <div class="scene"></div>
           <div class="content">
-            <div class="road"></div>
             <div class="button"><a href="#scene3-overlay"></a></div>
+            <div class="buttonb"><a href="#scene1-overlay"></a></div>
           </div>
         </div>
 
-        <div id="scene3-overlay" class="scene3-overlay">
-          <div class="scene"></div>
-          <div class="content">
-            <div class="road"></div>
-            <div class="button"><a href="#scene4-overlay"></a></div>
+        <div id="scene3-overlay" class="scene3-overlay hidden">
+          <div class="scene">
+            <div class="h1_container">
+              <h1 class="h1" id="scene3-title">Result</h1>
+              <p class="introduction" id="scene3-message">Did you miss a step? </br> Please forward to scene0 and start again</p>
+            </div>
           </div>
-        </div>
-
-        <div id="scene4-overlay" class="scene4-overlay">
-          <div class="scene"></div>
           <div class="content">
-            <div class="road"></div>
-            <div class="button"><a href="#scene5-overlay"></a></div>
-          </div>
-        </div>
-
-        <div id="scene5-overlay" class="scene5-overlay">
-          <div class="scene"></div>
-          <div class="content">
-            <div class="road"></div>
-            <div class="button"><a href="#scene6-overlay"></a></div>
-          </div>
-        </div>
-
-        <div id="scene6-overlay" class="scene6-overlay">
-          <div class="scene"></div>
-          <div class="content">
-            <div class="road"></div>
-            <div class="button"><a href="#scene7-overlay"></a></div>
-          </div>
-        </div>
-
-        <div id="scene7-overlay" class="scene7-overlay">
-          <div class="scene"></div>
-          <div class="content">
-            <div class="road"></div>
             <div class="button"><a href="#scene0-overlay"></a></div>
           </div>
         </div>
+
       </div>
     </div>
+    <audio id="bg-music" src="/audio/unexpected-connection.mp3" loop></audio>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

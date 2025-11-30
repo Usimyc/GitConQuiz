@@ -1,17 +1,8 @@
-@property --100vw {
-  syntax: "<length>";
-  initial-value: 0px;
-  inherits: true;
-}
-
 :root {
   font-size: 16px;
   --100vw: 100vw;
   --px-width: tan(atan2(var(--100vw), 1px));
   --duration: calc(var(--px-width) / 1000 * 55s);
-  --circle-width: 50px;
-  --button-size: clamp(55px, 8vw, 75px);
-  --button-margin: clamp(2vw, 4vw, 5vw);
 
   /* offsets not sure if needed 
 
@@ -24,7 +15,13 @@
 
   /* BASE COLORS */
 
+  --clr-reddish: rgb(36, 9, 9);
   --clr-ivory: ivory;
+  --clr-greenlight: rgb(103, 149, 119);
+  --clr-greendark: rgb(32, 61, 42);
+  --clr-greenblack: rgb(25, 40, 30);
+  --clr-greenmedium: rgb(104, 147, 118);
+  --clr-kraken: rgb(54, 150, 138);
 }
 
 html {
@@ -63,3 +60,6 @@ svg {
   max-width: 100%;
   user-select: none;
 }
+
+/*Credits */
+/*https://pixabay.com/music/modern-jazz-unexpected-connection-strategy-risk-407229/ */

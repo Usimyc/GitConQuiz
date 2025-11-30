@@ -1,26 +1,4 @@
-/* xs */
-
-/* @media (min-width: 475px) {} */
-
-/* sm */
-
-/* @media (min-width: 640px) {} */
-
-/* md */
-
-/* @media (min-width: 768px) {} */
-
-/* lg */
-
-/* @media (min-width: 1024px) {} */
-
-/* xl */
-
-/* @media (min-width: 1280px) {} */
-
-/* 2xl */
-
-/* @media (min-width: 1536px) {} */
+/* BUTTON */
 
 .button,
 .button1,
@@ -31,17 +9,40 @@
 .button6,
 .button7 {
   display: block;
-  position: relative;
+  position: absolute;
+  font-family: Chillax, sans-serif;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
   width: clamp(55px, 8vw, 75px);
   height: clamp(55px, 8vw, 75px);
-  border: 10px solid #f59930;
-  border-radius: 50%;
-  background: #f7a94b;
+  background-image: url("img/arrowtryout4.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  text-align: center;
+  padding-top: 1.5rem;
+  z-index: 999;
+  bottom: 25px;
+  right: 35px;
+}
+
+.buttonb,
+.buttonb1,
+.buttonb2,
+.buttonb3,
+.buttonb4,
+.buttonb5,
+.buttonb6,
+.buttonb7 {
+  display: block;
+  position: absolute;
+  width: clamp(55px, 8vw, 75px);
+  height: clamp(55px, 8vw, 75px);
+  background-image: url("img/arrowtryout5.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   cursor: pointer;
   z-index: 999;
-  grid-area: button;
-  justify-self: end;
-  margin-right: 2vw;
+  bottom: 25px;
+  left: 35px;
 }
 
 a {

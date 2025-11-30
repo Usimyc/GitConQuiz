@@ -1,3 +1,38 @@
+.hidden {
+  display: none;
+}
+
+audio {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  left: 20px;
+  background-color: rgba(235, 221, 221, 0.9);
+}
+
+.audio-controls {
+  position: absolute;
+  top: 0.5rem;
+  right: clamp(1rem, 8vw, 6rem);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 9999;
+}
+
+.audio-controls label {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.audio-controls input[type="range"] {
+  width: 70px;
+  height: 4px;
+  accent-color: #fff;
+  margin: 0;
+  cursor: pointer;
+}
+
 #overlays-container {
   width: 100%;
   height: 100%;
@@ -13,17 +48,13 @@
   text-align: center;
   width: 100vw;
   height: 100vh;
-  background: rgb(36, 9, 9);
+  background: radial-gradient(var(--clr-greenlight), var(--clr-greenblack));
 }
 
 .scene0-overlay,
 .scene1-overlay,
 .scene2-overlay,
-.scene3-overlay,
-.scene4-overlay,
-.scene5-overlay,
-.scene6-overlay,
-.scene7-overlay {
+.scene3-overlay {
   position: absolute;
   align-items: center;
   justify-content: center;
@@ -32,43 +63,64 @@
 
 .scene {
   position: relative;
-  width: 90vw;
-  height: 90vh;
+  width: 85vw;
+  height: 85vh;
   overflow: hidden;
 }
 
 .content {
   position: absolute;
-  display: grid;
-  grid-template-columns: 7fr 1fr;
-  grid-template-areas: "road button";
-  align-items: center;
   width: 100%;
-  height: 90px;
-  bottom: 0;
+  height: 50px;
+  bottom: -10px;
   left: 0;
-  gap: 2vw;
-  background: linear-gradient(to top, #000000 30%, #27271f);
   z-index: 3;
+  background: transparent;
 }
 
 /* SCENE0 */
 
-.scene0-overlay .scene {
-  background: rgb(13, 7, 7);
+.scene0-overlay {
+  display: none;
+}
+
+.scene0-overlay .scene,
+.scene1-overlay .scene {
+  background: var(--clr-greenblack);
+}
+
+.scene0-overlay .h1_container,
+.scene1-overlay .h1_container,
+.scene3-overlay .h1_container {
+  position: absolute;
+  width: 50vw;
+  height: 55vh;
+  background: var(--clr-greenlight);
+  top: 38%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -35%);
 }
 
 .scene0-overlay .h1 {
   position: absolute;
-  top: 35%;
+  min-width: 100%;
+  height: auto;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -35%);
-  font-size: clamp(3rem, 7vw, 6rem);
+  transform: translate(-50%, -40%);
+  font-size: clamp(2.5rem, 6.5vw, 5rem);
   letter-spacing: 0.01em;
 }
 
-.scene0-overlay .content {
-  background: black;
+.scene0-overlay .introduction {
+  position: absolute;
+  min-width: 100%;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  letter-spacing: 0.01em;
 }
 
 #scene1-overlay:target {
@@ -76,111 +128,38 @@
   opacity: 1;
 }
 
-/*:target #scene1-overlay,
-#scene0-overlay {
-  display: none;
-}*/
-
 /* SCENE1 */
 
 .scene1-overlay {
   display: none;
 }
 
-.scene1-overlay .scene {
-  background-color: rgb(48, 47, 47);
-}
-
-.moving-bg-container {
+.scene1-overlay .h1 {
   position: absolute;
-  inset: 0;
-  height: 90%;
-  overflow: hidden;
-  background-color: transparent;
+  min-width: 100%;
+  height: auto;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  letter-spacing: 0.01em;
+  padding-bottom: 1rem;
 }
 
-.moving-bg {
-  width: 100%;
-  height: 100%;
-  background: url("img/houses1692.png");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  animation: bg-slide 60s linear infinite;
-  /*animation-play-state: paused;*/
-}
-
-@keyframes bg-slide {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: -1692px 0;
-  }
-}
-
-.road {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 90px;
-  bottom: 0;
-  grid-area: road;
-}
-
-.eye-holder {
-  display: flex;
-  align-items: center;
-  width: 70vw;
-  height: 90px;
-}
-
-.eye {
-  display: flex;
-  position: relative;
-  width: var(--circle-width);
-  height: var(--circle-width);
-  z-index: 1;
-  animation: slide-right var(--duration) ease-in forwards;
-}
-
-/*.eye::before {
-  content: "";
+.scene1-overlay .introduction {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background: black;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 9px rgb(249, 249, 249),
-    inset 0 0 0 1px white;
-  z-index: 999;
-  animation: opacity 2s forwards,
-    eyechange 2s 4s linear forwards,
-    jump 2s 8.25s linear infinite;
-}*/
-
-.eye::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: rgb(0, 0, 0);
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 8px white, inset 0 0 0 1px white;
-  z-index: 1;
-  animation: opacity 2s 1s forwards, eyechange1 2s 4s linear forwards,
-    jump 2s 8.75s linear infinite;
+  min-width: 100%;
+  top: clamp(300px, 3vw, 450px);
+  left: 50%;
+  transform: translate(-50%, -75%);
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  letter-spacing: 0.01em;
+  padding-top: 50px;
 }
 
-@keyframes slide-right {
-  to {
-    transform: translate(
-      calc(
-        92vw - var(--circle-width) - var(--button-size) - var(--button-margin)
-      )
-    );
-  }
+.gap {
+  display: block;
+  height: 0.25rem;
 }
 
 #scene2-overlay:target {
@@ -190,12 +169,96 @@
 
 /* SCENE2 */
 
-.scene2-overlay {
+.scene1-overlay {
   display: none;
 }
 
 .scene2-overlay .scene {
-  background: rgb(19, 21, 20);
+  background-color: var(--clr-greenblack);
+}
+
+.game-info {
+  font-family: Chillax, sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 5rem);
+  font-weight: bold;
+  word-spacing: 1rem;
+  text-shadow: 1px -1px 1px #e1cece;
+  margin-top: 1rem;
+}
+
+.scene2-overlay .h1_container {
+  position: absolute;
+  width: 60vw;
+  height: 65vh;
+  background: var(--clr-greenlight);
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -35%);
+}
+
+.game-holder {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: center;
+  gap: clamp(10px, 3vw, 18px);
+  padding: 10px;
+}
+
+.a,
+.b {
+  font-family: Chillax, sans-serif;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: bold;
+  text-shadow: 1px 2px 1px var(--clr-greenblack);
+  place-self: center;
+  cursor: pointer;
+}
+
+.box-a,
+.box-b {
+  font-family: Chillax, sans-serif;
+  font-size: clamp(0.5rem, 4vw, 1.25rem);
+  font-weight: 400;
+  text-shadow: 1px 1px 1px #e1cece;
+  text-align: left;
+  place-self: center;
+  line-height: 1.8;
+  width: clamp(180px, 25vw, 220px);
+  height: clamp(165px, 15vw, 240px);
+  background-color: var(--clr-greenblack);
+  padding: 0.5rem;
+}
+
+@media (min-width: 690px) {
+  .game-holder {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "a b"
+      "box-a box-b";
+    column-gap: clamp(20px, 5vw, 120px);
+    row-gap: clamp(20px, 3vw, 60px);
+    padding: 90px 30px 10px 30px;
+  }
+
+  .a {
+    grid-area: a;
+  }
+  .b {
+    grid-area: b;
+  }
+  .box-a {
+    grid-area: box-a;
+  }
+  .box-b {
+    grid-area: box-b;
+  }
+}
+
+.scene2-overlay .button,
+.scene2-overlay .buttonb {
+  opacity: 0 !important;
 }
 
 #scene3-overlay:target {
@@ -210,67 +273,30 @@
 }
 
 .scene3-overlay .scene {
-  background: rgb(230, 220, 75);
+  background-color: var(--clr-greenblack);
 }
 
-#scene4-overlay:target {
-  display: block;
-  opacity: 1;
+.scene3-overlay .h1 {
+  position: absolute;
+  min-width: 100%;
+  height: auto;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  font-size: clamp(1.7rem, 4.5vw, 4rem);
+  letter-spacing: 0.01em;
+  padding-bottom: 1rem;
 }
 
-/* SCENE4 */
-
-.scene4-overlay {
-  display: none;
-}
-
-.scene4-overlay .scene {
-  background: rgb(230, 114, 75);
-}
-
-#scene5-overlay:target {
-  display: block;
-  opacity: 1;
-}
-
-/* SCENE5 */
-
-.scene5-overlay {
-  display: none;
-}
-
-.scene5-overlay .scene {
-  background: rgb(132, 75, 230);
-}
-
-#scene6-overlay:target {
-  display: block;
-  opacity: 1;
-}
-
-/* SCENE6 */
-
-.scene6-overlay {
-  display: none;
-}
-
-.scene6-overlay .scene {
-  background: rgb(28, 109, 110);
-}
-
-#scene7-overlay:target {
-  display: block;
-  opacity: 1;
-}
-
-/* SCENE7 */
-
-.scene7-overlay {
-  display: none;
-}
-
-.scene7-overlay .scene {
-  background: rgb(10, 69, 30);
+.scene3-overlay .introduction {
+  position: absolute;
+  min-width: 95%;
+  top: clamp(260px, 3vw, 300px);
+  left: 50%;
+  transform: translate(-50%, -75%);
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  letter-spacing: 0.01em;
+  padding-top: 50px;
 }
 
 #scene0-overlay:target {
