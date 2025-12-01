@@ -22,6 +22,11 @@ On a more serious approach - this game explores fun examples of good and not so 
 
 ---
 
+## Note
+This game works best on desktop. We didn't have the time to fully adjust all media queries. 
+
+---
+
 ## Credits
 - music: https://pixabay.com/music/modern-jazz-unexpected-connection-strategy-risk-407229/
 - animation and legs setup based on: https://codepen.io/alialexalia/pen/vYZyWWq
