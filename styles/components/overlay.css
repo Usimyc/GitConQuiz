@@ -81,7 +81,7 @@ audio {
 /* SCENE0 */
 
 .scene0-overlay {
-  display: none;
+  display: block;
 }
 
 .scene0-overlay .scene,
